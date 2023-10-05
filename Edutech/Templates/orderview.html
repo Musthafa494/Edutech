@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<h1 align="center">Username:{{user}}</h1>
+
+{% for i in o %}
+
+
+<div class="container bg-light p-3 border">
+    <div class="row">
+        <div class="col-sm-2 col-md-3"><img src="{{i.products.image.url }}" style="height:130px;width:120px;"></div>
+        <div class="col-md-3">
+
+  Item: {{ i.products }}<br>
+  Price:{{i.products.price}}<br>
+  Quantity:{{ i.noofitems }}<br>
+  Order Status:{{ i.order_status }}<br>
+            <strong class="text-primary">Date&Time:{{ i.date_added }}</strong><br>
+  Subtotal:{{i.subtotal }}<br>
+
+
+           <a href="{% url 'cart:content' %}" class="btn btn-primary link">Files</a>
+
+
+
+</div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

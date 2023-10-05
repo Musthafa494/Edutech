@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+ <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-3">
+  <label  class="form-label">Email</label>
+  <input type="email" class="form-control" name="a" placeholder="Enter Your Email Here:">
+</div>
+
+    <div class="mb-3">
+  <label  class="form-label">PhoneNumber</label>
+  <input type="number" class="form-control" name="p"   placeholder="Enter Your Phone Number">
+</div>
+<div class="mb-3">
+  <label  class="form-label">AccNumber</label>
+  <input type="number" class="form-control" name="n" placeholder="Enter Your Account Number">
+</div>
+
+    <div class="mb-3">
+  <input type="submit" class="form-control">
+</div>
+    </form>
+
+
+{% endblock %}

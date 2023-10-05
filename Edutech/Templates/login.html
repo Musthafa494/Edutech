@@ -1,0 +1,33 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+<div class="container" style="margin-bottom:100px">
+
+  <h1>LOGIN</h1>
+  <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-3">
+  <label  class="form-label">UserName</label>
+  <input type="text" class="form-control" name="u" placeholder="Enter Your User Name:">
+</div>
+
+    <div class="mb-3">
+  <label  class="form-label">Password</label>
+  <input type="password" class="form-control" name="p" placeholder="Enter Password">
+</div>
+
+
+    <div class="mb-3">
+  <input type="submit" class="form-control">
+</div>
+    </form>
+{% if messages %}
+{% for i in messages %}
+<ul class="messages">
+    <li>{{i}}</li>
+
+</ul>
+{% endfor %}
+{% endif %}
+</div>
+{% endblock %}

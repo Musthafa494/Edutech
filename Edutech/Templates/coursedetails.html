@@ -1,0 +1,26 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mt-5">
+    <img src="{{p.image.url}}" height="250px" width="100%">
+
+
+            </div>
+        <div class="col-sm-6 mt-5">
+            <h1>{{p.title}}</h1>
+            <h2>{{p.price}}</h2>
+            <h4>Product Description</h4>
+            <p>{{p.description}}</p>
+
+            <a class="btn btn-primary" href="{% url 'cart:cartproducts' p.id %}">Learn Now</a>
+        </div>
+      </div>
+</div>
+<div>
+
+</div>
+
+{% endblock %}
